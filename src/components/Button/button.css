@@ -1,0 +1,19 @@
+.add-to-cart{
+    display: flex;
+    width:100%;
+    justify-content: center;
+    gap:10px;
+    align-items: center;
+    border-radius: 5px;
+    padding: 12px;
+    background-color:#ff7d1a ;
+    box-shadow: #ff7d1a 0px 10px 20px -10px;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.cart{
+    width: 1em;
+    filter: brightness(0) saturate(100%);
+}

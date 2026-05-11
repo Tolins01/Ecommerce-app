@@ -1,0 +1,103 @@
+/* Overlay background */
+.lightbox-overlay {
+  position: fixed;
+  inset:0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Wrapper for the content */
+.lightbox {
+  width: min(90%, 20em);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:1rem
+}
+
+
+.lightbox-image{
+  width: 100%;
+  max-width:100%;
+  border-radius: 1rem;
+}
+
+
+
+/* Main image inside lightbox */
+.lightbox-main {
+  position: relative;
+  width: 100%;
+
+}
+
+/* Close button */
+.close {
+  position: absolute;
+   top: -3.5rem;
+  right: 0;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Arrows */
+.next-image,
+.prev-image {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.next-image {
+  right:-1rem;
+}
+
+.prev-image {
+ left:-1rem;
+}
+
+/* Thumbnail container */
+.thumbnails{
+    position: relative;
+    gap: 1rem;
+    display:flex;
+}
+
+/* Thumbnail images */
+.thumbnail{
+  width: 4rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.thumbnail:hover{
+  opacity: 0.6;
+}
+
+/* Active thumbnail */
+.active {
+  border: 2px solid orange;
+  opacity: 1;
+}
+
+
+@media(max-width:450px){
+  .lightbox-overlay,
+  .lightbox{
+    display: none;
+  }
+}

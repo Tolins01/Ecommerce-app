@@ -1,0 +1,137 @@
+.main{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    gap: 1rem;
+    padding:2rem 8rem;
+    justify-content: center;
+    align-items: center;
+    z-index: -20;
+}
+
+
+.company{
+    color: #68707d;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+
+.product-image {
+    width: 20em;
+    border-radius: 20px;
+    }
+
+.product-info{
+        width: 70%;
+        padding:20px;
+        display:flex;
+        gap: 1rem;
+        flex-direction: column;
+        padding-bottom: 2rem;
+        z-index: -20;
+    }
+
+.product-name{
+    font-size: 1.5em;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.product-description{
+    color: #68707d;
+     line-height: 1.5;
+    font-size: 0.7em;
+}
+
+.button-items{
+    display: flex;
+    gap: 1.2em;
+    align-items: center;
+    width: 100%;}
+
+
+.prev img {
+    width: 9px;
+    height: 14px;
+}
+
+.next img {
+    width: 9px;
+    height: 14px;
+}
+
+
+@media(max-width:1000px){
+    .button-items{
+    flex-direction: column;
+    gap: 1.2em;
+    align-items: center;
+    width: 100%;}
+    .main{
+        padding: 2rem 4rem;
+    }
+}
+
+@media (max-width:785px){
+
+    .product-info h1{
+         font-size: 20px;
+    }
+    .main{
+        padding: 2rem;
+        gap:10px;
+        z-index:-1;
+    }
+}
+
+@media (max-width:700px) {
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-image {
+    width: 80%;
+    }
+}
+
+@media (max-width:450px) {
+    .main{
+        flex-direction: column;
+        gap:0;
+        z-index: -5;
+        padding: 0;
+        overflow-y: scroll;
+    }
+
+    .product-image {
+    position: relative;
+    border-radius: 0;
+    width: 100%;
+    }  
+
+    .product-info{
+        padding:20px;
+        display:flex;
+        gap: 1.2em;
+        flex-direction: column;
+        padding-bottom: 2rem;
+    }
+
+    .price{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+    }
+
+    .button-items{
+        flex-direction: column;
+        width: 100%;
+        gap: 1.2em;
+    }
+}
+
