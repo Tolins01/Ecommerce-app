@@ -1,10 +1,10 @@
 import Header from './components/header/Header'
 import MainContent from './components/mainContent/MainContent'
-
 import LightBox from './components/Lightbox/LightBox'
 import Sidebar from './components/Sidebar/Sidebar'
 import { useState } from 'react'
 import './App.css'
+
 const product = {
   title: "Fall Limited Edition Sneakers",
   actual: 250,
@@ -15,7 +15,8 @@ const product = {
 
 
 function App() {
-  const [cartItems, setCartItems] = useState({itemsNo: 0, isClicked: false}) 
+  const [cartItems, setCartItems] = useState({itemsNo: 0, isClicked: false})
+  const [alert, setAlert] = useState({show: false, message: ""});
   const [isDeleted, setIsDeleted] = useState(false)
   const [count, setCount] = useState(0)
   const [issidebarOpen, setIsSidebarOpen] = useState(false)
@@ -41,27 +42,40 @@ function App() {
   }
 
   const deleteCartItem = () => {
-    alert("Item removed from cart!")
-    setIsDeleted(!isDeleted)
-    setCartItems(prev => ({...prev, itemsNo: 0}))
+    setIsDeleted(true)
+    setCartItems(prev => ({...prev, isClicked:false, itemsNo:0}))
+    setAlert(prev =>({...prev, show:true, Message:"Item has been removed to Cart"}))
+
+    setTimeout( () => {( 
+        setAlert(prev=>({...prev,show:false, Message:""}))
+    )},3000)
   }
 
   const cartOpened = () => {
     setCartItems(prev => ({...prev, isClicked: !prev.isClicked}))
   } 
+
+
   const updateCart = ()=>{
-    alert("Item added to cart!")
-    setCartItems(prev =>({...prev, itemsNo: count}))
-  }
+   setCartItems(prev => ({...prev, isClicked: !prev.isClicked, itemsNo:count}))
+
+   count !==0 &&
+    setAlert(prev =>({...prev, show:true, Message:"Item has been added to Cart"}))
+
+    setTimeout( () => {(
+       setAlert(prev =>( {...prev,show:false, Message:""}))
+    )},3000)
+   
+};
   
   return (
     <>
       <div className={`${!productViewed ? "container" : "container-dim"}`}>
           <Sidebar toggleSidebar={toggleSidebar} issidebarOpen={issidebarOpen} />
           <Header cartOpened={cartOpened} Items={cartItems.isClicked}  toggleSidebar={toggleSidebar} itemsNo={cartItems.itemsNo} />
-          <MainContent cartClicked={cartItems.isClicked} ItemsNo={cartItems.itemsNo} count={{ next: increment, prev: decrement,count:count }} deleteCartItem={{deleteCartItem,isDeleted}}
+          <MainContent cartClicked={cartItems.isClicked} ItemsNo={cartItems} count={{ next: increment, prev: decrement,count:count }} deleteCartItem={{deleteCartItem,isDeleted}}
           updateCart={updateCart} product={product} cartOpened={cartOpened}
-          viewed={viewed}/>
+          viewed={viewed} alert={alert} />
           {productViewed && <LightBox close={viewed} />}
       </div>    
     </>

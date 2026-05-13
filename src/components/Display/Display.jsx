@@ -22,13 +22,13 @@ export default function Display(props) {
 
   return (
      <section className='section-image'>
-            <img className="product-image" src={`images/image-product-${currentImage}.jpg`} alt="sneaker display slides"/>
+            <img  onClick={handleClicked} className="product-image" src={`images/image-product-${currentImage}.jpg`} alt="sneaker display slides"/>
 
             <div className="desktop-images">
               {
                [1,2,3,4].map( val => ( 
                   <img 
-                     onClick={handleClicked} 
+                     onClick={()=> setCurrentImage(val)} 
                      key={val} 
                      className="product-image desk-img" 
                      src={`images/image-product-${val}.jpg`} 
