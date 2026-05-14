@@ -63,6 +63,9 @@
     width: 9px;
     height: 14px;
 }
+.alert{
+    display: none;
+}
 
 .alert-success{
   position: fixed;
@@ -77,9 +80,7 @@
   animation: slideIn 0.3s ease;
 }
 
-.alert{
-    display: none;
-}
+
 
 @keyframes slideIn {
   from {
