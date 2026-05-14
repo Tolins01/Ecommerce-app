@@ -43,12 +43,12 @@ function App() {
 
   const deleteCartItem = () => {
     setIsDeleted(true)
-    setCartItems(prev => ({...prev, isClicked:false, itemsNo:0}))
     setAlert(prev =>({...prev, show:true, Message:"Item has been removed to Cart"}))
 
     setTimeout( () => {( 
         setAlert(prev=>({...prev,show:false, Message:""}))
     )},3000)
+    setCartItems(prev => ({...prev, itemsNo:0}))
   }
 
   const cartOpened = () => {
@@ -59,8 +59,7 @@ function App() {
   const updateCart = ()=>{
    setCartItems(prev => ({...prev, isClicked: !prev.isClicked, itemsNo:count}))
 
-   count !==0 &&
-    setAlert(prev =>({...prev, show:true, Message:"Item has been added to Cart"}))
+   count !==0 &&setAlert(prev =>({...prev, show:true, Message:"Item has been added to Cart"}))
 
     setTimeout( () => {(
        setAlert(prev =>( {...prev,show:false, Message:""}))

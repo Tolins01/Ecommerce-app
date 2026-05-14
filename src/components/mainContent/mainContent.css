@@ -64,10 +64,10 @@
     height: 14px;
 }
 
-.alert{
+.alert-success{
   position: fixed;
   top: 5rem;
-  right: 20px;
+  right: 40%;
   color: #1db954;
   background-color: white;
   padding: 15px 25px;
@@ -75,6 +75,10 @@
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   animation: slideIn 0.3s ease;
+}
+
+.alert{
+    display: none;
 }
 
 @keyframes slideIn {

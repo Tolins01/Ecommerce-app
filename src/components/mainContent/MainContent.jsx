@@ -27,7 +27,7 @@ export default function MainContent(props) {
        </div>
       </section> 
       {props.alert && (
-        <div className="alert">
+        <div className={props.alert?'alert-success':'alert'}>
           {props.alert.Message}
         </div>
       )}
