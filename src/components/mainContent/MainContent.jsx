@@ -26,8 +26,10 @@ export default function MainContent(props) {
         <Button text="Add to cart" img={true} onClick={props.updateCart} />
        </div>
       </section> 
-      {props.alert && (
-        <div className={props.alert?'alert-success':'alert'}>
+      {props.alert.show && (
+        <div className= "alert-success"
+        role="alert"
+        aria-live="polite">
           {props.alert.Message}
         </div>
       )}
