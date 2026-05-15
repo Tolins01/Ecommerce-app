@@ -66,6 +66,9 @@
     width: 9px;
     height: 14px;
 }
+.alert{
+    display: none;
+}
 
 
 .alert{
