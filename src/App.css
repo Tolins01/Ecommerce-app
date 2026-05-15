@@ -4,11 +4,14 @@
 }
 
 
+.product-info h1{
+         font-size: 30px;
+    }
+
 .container{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
     position: relative;
     padding: 0 1rem;
     z-index: 10;
@@ -48,15 +51,40 @@
 }
 
 
+.next,
+.prev,
+.next-image,
+.prev-image,
+.close,
+.display-image-but,
+.desk-img-btn,
+.thumbnail {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+button img {
+  display: block;
+}
+
 @media (max-width:785px) {
     .container{
         padding: 0;
     }
     .section{
         width: 100%;
-        gap: 10px;
+        gap: 1.5rem;
+        padding-right: 1.5rem;
     }
   
+}
+
+@media (max-width:700px){
+    .section{
+      gap: 1rem;
+    }
 }
 
 

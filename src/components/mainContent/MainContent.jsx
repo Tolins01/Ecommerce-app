@@ -27,7 +27,9 @@ export default function MainContent(props) {
        </div>
       </section> 
       {props.alert.show && (
-        <div className= { `${props.alert.show?'alert-success':'alert'}` }>
+        <div className= "alert-success"
+        role="alert"
+        aria-live="polite">
           {props.alert.Message}
         </div>
       )}

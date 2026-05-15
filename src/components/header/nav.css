@@ -110,7 +110,16 @@ img{
 .avatar{
         width: 32px;
         margin-left:1.5rem ;
+        border-radius: 50%;
+        transition: transform 0.25s ease,
+        border-color 0.25s ease;
     }
+
+.avatar:hover{
+        border: 2px solid #ff7d1a;
+        transform: scale(1.05);
+    }
+
 
 .hambuger{
     display:none
