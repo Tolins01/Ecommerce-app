@@ -29,7 +29,7 @@ export default function Display(props) {
 
             <div className="desktop-images">
               {
-               [1,2,3,4].map( val => ( 
+               [1,2,3,4].map(val => ( 
                   <button 
                      className="desk-img-btn"
                      onClick={()=> setCurrentImage(val)} 

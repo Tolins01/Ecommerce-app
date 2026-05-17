@@ -43,54 +43,27 @@ export default function LightBox({ close }) {
       <div className="lightbox">
         <div className="lightbox-main">
 
-          <button
-            ref={closeBtnRef}
-            className="close"
-            onClick={close}
-            aria-label="Close lightbox"
-          >
+          <button ref={closeBtnRef} className="close" onClick={close} aria-label="Close lightbox" >
             ×
           </button>
+        
+        <img className="lightbox-image" src={`images/image-product-${currentImage}.jpg`} alt={`Product image ${currentImage}`}/>
 
-          <img
-            className="lightbox-image"
-            src={`images/image-product-${currentImage}.jpg`}
-            alt={`Product image ${currentImage}`}
-          />
+        <button className="next-image" onClick={nextImage} aria-label="Next image">
+            <img src="images/icon-next.svg" alt=""/>
+        </button>
 
-          <button
-            className="next-image"
-            onClick={nextImage}
-            aria-label="Next image"
-          >
-            <img src="images/icon-next.svg" alt="" />
-          </button>
-
-          < button
-            className="prev-image"
-            onClick={prevImage}
-            aria-label="Previous image"
-          >
-             <img src="images/icon-previous.svg" alt="" />
+        <button className="prev-image" onClick={prevImage} aria-label="Previous image">
+             <img src="images/icon-previous.svg" alt=""/>
         </button>
         </div>
 
         <div className="thumbnails">
           {[1, 2, 3, 4].map(num => (
-            <button
-              key={num}
-              onClick={() => setCurrentImage(num)}
-              className={
-                currentImage === num
-                  ? 'thumbnail active'
-                  : 'thumbnail'
-              }
-              aria-label={`View product image ${num}`}
-            >
-              <img
-                src={`images/image-product-${num}.jpg`}
-                alt=""
-              />
+            <button key={num} onClick={() => setCurrentImage(num)}
+              className={ currentImage === num? 'thumbnail active' : 'thumbnail'}
+              aria-label={`View product image ${num}`}>
+              <img src={`images/image-product-${num}.jpg`} alt=""/>
             </button>
           ))}
         </div>

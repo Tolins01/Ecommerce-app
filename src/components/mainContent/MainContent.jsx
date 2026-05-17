@@ -10,7 +10,7 @@ export default function MainContent(props) {
   
   return (
     <main className="main">
-      <Display viewedProd = {props.viewed}/>
+      <Display viewedProd = {props.viewed} />
       <div className={`cart-card${props.cartClicked ? '-open' : ''}`}>
         <Cart deleteCartItem={props.deleteCartItem.deleteCartItem} title={props.product.title} price={props.product.discounted} quantity={props.ItemsNo.itemsNo} isdeleted={props.isDeleted} cartOpened={props.cartOpened} />
       </div>
@@ -30,7 +30,7 @@ export default function MainContent(props) {
         <div className= "alert-success"
         role="alert"
         aria-live="polite">
-          {props.alert.Message}
+          {props.alert.message}
         </div>
       )}
     </main>

@@ -9,11 +9,11 @@ export default function Header(props) {
                 <div className='nav-left'>
                 <ul className='nav-list'>
                     <li className='list'>
-                        <img onClick={() => props.toggleSidebar()} className='hambuger' src='/images/icon-menu.svg' alt="Menu" />
+                        <img onClick={() => props.toggleSidebar()} className='hambuger' src='/images/icon-menu.svg' alt="Menu"/>
                     </li>
                     <li className='list'>
                         <a href="#">
-                        <img className='logo' src='/images/logo.svg' alt="Logo" />
+                        <img className='logo' src='/images/logo.svg' alt="Logo"/>
                         </a>
                     </li>
                     <ul className='other-list'>
@@ -43,13 +43,13 @@ export default function Header(props) {
                         <a href="#">
                             <img onClick={() => {  
                                 props.cartOpened()
-                            }}  className='cart-header' src='images/icon-cart.svg' alt="cart"/>
+                            }} className='cart-header' src='images/icon-cart.svg' alt="cart"/>
                             {props.itemsNo !==0 && <span className='cart-items-no'>{props.itemsNo}</span>}
                         </a>
                     </li>
                     <li className='list'>
                         <a href='#'>
-                            <img className='avatar' src="images/image-avatar.png" alt="" />
+                            <img className='avatar' src="images/image-avatar.png" alt=""/>
                         </a>
                     </li>
                 </ul>
